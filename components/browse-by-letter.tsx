@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { ItalicIcon as AlphabetIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { ItalicIcon as AlphabetIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function BrowseByLetter() {
-  const router = useRouter()
-  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+  const router = useRouter();
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   const handleLetterClick = (letter: string) => {
-    router.push(`/search?letter=${letter.toLowerCase()}`)
-  }
+    router.push(`/search?letter=${letter.toLowerCase()}`);
+  };
 
   return (
     <div className="w-full">
@@ -19,9 +19,12 @@ export function BrowseByLetter() {
         <div className="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">
           <AlphabetIcon className="h-5 w-5 text-primary" />
         </div>
-        <h2 className="text-2xl font-bold mb-2">Browse Recipes by First Letter</h2>
+        <h2 className="text-2xl font-bold mb-2">
+          Browse Recipes by First Letter
+        </h2>
         <p className="text-muted-foreground max-w-2xl">
-          Explore our recipe collection alphabetically. Click on any letter to see all recipes that start with it.
+          Explore our recipe collection alphabetically. Click on any letter to
+          see all recipes that start with it.
         </p>
       </div>
 
@@ -46,7 +49,7 @@ export function BrowseByLetter() {
 
       <div className="mt-8 text-center">
         <p className="text-sm text-muted-foreground">
-          Can't find what you're looking for? Try our{" "}
+          Can&apos t find what you&aposre looking for? Try our{" "}
           <Button
             variant="link"
             className="p-0 h-auto font-medium"
@@ -57,5 +60,5 @@ export function BrowseByLetter() {
         </p>
       </div>
     </div>
-  )
+  );
 }

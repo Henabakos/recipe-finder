@@ -1,34 +1,36 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { useState } from "react"
+import Image from "next/image";
+import { useState } from "react";
 
 interface RecipeImageProps {
-  src: string | undefined
-  alt: string
+  src: string | undefined;
+  alt: string;
 }
 
 export function RecipeImage({ src, alt }: RecipeImageProps) {
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
 
   if (!src || error) {
     return (
       <div className="absolute inset-0 flex items-center justify-center">
         <span className="text-muted-foreground">No image available</span>
       </div>
-    )
+    );
   }
 
   // Use regular img tag for external images
   if (src.startsWith("http")) {
     return (
-      <img
+      <Image
         src={src || "/placeholder.svg"}
         alt={alt}
+        width={500}
+        height={500}
         className="absolute inset-0 w-full h-full object-cover"
         onError={() => setError(true)}
       />
-    )
+    );
   }
 
   // Use Next.js Image for internal images
@@ -42,5 +44,5 @@ export function RecipeImage({ src, alt }: RecipeImageProps) {
       priority
       onError={() => setError(true)}
     />
-  )
+  );
 }

@@ -6,16 +6,16 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['www.themealdb.com'],
+    domains: ["www.themealdb.com"],
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'www.themealdb.com',
-        pathname: '/images/media/meals/**',
+        protocol: "https",
+        hostname: "www.themealdb.com",
+        pathname: "/images/media/meals/**",
       },
     ],
     unoptimized: true,
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
